@@ -1,0 +1,7 @@
+RewriteEngine On
+
+# Исключаем папку /tools из перенаправления
+RewriteCond %{REQUEST_URI} !^/tools [NC]
+
+# Перенаправляем всё остальное в папку public
+RewriteRule ^(.*)$ public/$1 [L]
